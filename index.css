@@ -1,0 +1,330 @@
+/* 引入字体图标文件 */
+@font-face {
+  font-family: "icomoon";
+
+  src: url("fonts/icomoon.eot?lrm1je");
+
+  src: url("fonts/icomoon.eot?lrm1je#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?lrm1je") format("truetype"),
+    url("fonts/icomoon.woff?lrm1je") format("woff"),
+    url("fonts/icomoon.svg?lrm1je#icomoon") format("svg");
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-image: url(image/bg3.jpg);
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+input,
+button {
+  outline: none;
+  border: 0;
+}
+header {
+  height: 290px;
+  text-align: center;
+}
+#head {
+  padding-top: 25px;
+  height: 130px;
+  background-color: rgb(124, 131, 253);
+}
+#portrait {
+  width: 180px;
+  height: 180px;
+  border: 5px solid white;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+}
+header p {
+  padding-top: 15px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(68, 67, 67);
+}
+/* 导航栏  */
+nav {
+  height: 70px;
+}
+nav ul {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+nav ul li a {
+  width: 160px;
+  height: 60px;
+  float: left;
+  line-height: 60px;
+  color: rgb(68, 67, 67);
+}
+nav ul li a:hover {
+  border-bottom: 2px solid rgb(150, 186, 255);
+  color: rgb(150, 186, 255);
+}
+/* 搜索模块  */
+#SearchArea {
+  height: 500px;
+  background: url("image/bgp1.jpg");
+  opacity: 0.6;
+  box-shadow: 10px 0 10px gray;
+}
+section #wrap-box {
+  position: relative;
+}
+#motto {
+  font-family: "icomoon";
+  font-size: 46px;
+  color: rgb(51, 51, 51);
+  position: absolute;
+  top: 78px;
+  left: 100px;
+}
+#search-box {
+  position: absolute;
+  top: 240px;
+  left: 100px;
+  width: 350px;
+  height: 55px;
+}
+#search {
+  height: 100%;
+  width: 295px;
+  border-radius: 25px 0 0 25px;
+  font-size: 16px;
+  padding-left: 15px;
+}
+#search-bt {
+  width: 55px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  font-family: "icomoon";
+  font-size: 26px;
+  background-color: #6aa3c9;
+  color: white;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+/* 书单模块 */
+#BookListArea,#FilmArea {
+  height: 450px;
+  position: relative;
+}
+#BookList{
+  width: 180px;
+  height: 100px;
+  position:absolute;
+  top: 86px;
+  left: 30px;
+  text-align: right;
+}
+#BookList h5::before{
+  content: "\e912";
+  font-family: "icomoon";
+  position:absolute;
+  top: 3px;
+  left: 84px;
+  font-size: 40px;
+  color: #4e4e4e;
+}
+#BookList h5{
+  font-family: "icomoon";
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+  font-weight: 100;
+}
+#BookList-cards{
+  width: 955px;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.link{
+  height: 320px;
+}
+.BookList-card{
+  position: relative;
+  width: 250px;
+  height: 350px;
+  background-color: rgb(232, 231, 236);
+  margin:40px 20px 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(170, 169, 169);
+}
+.BookList-card:hover{
+  background-color:rgb(149, 173, 190);
+}
+.BookList-card img{
+  width: 65%;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+}
+#ReadingStatusBox{
+  width: 70px;
+  position: absolute;
+  right: 5px;
+  top: 70px;
+}
+.ReadingStatus{
+  display: inline-block;
+  width: 100%;
+  height: 25px;
+  padding:4px 6px;
+  margin: 8px 0px;
+  border-radius: 15px;
+  font-family: "icomoon";
+  color: #565657;
+  text-align:center;
+  line-height: 18px;
+}
+.B-introduce{
+  width: 100%;
+  height: 30%;
+  position:absolute;
+  bottom:0;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 16px;
+}
+.B-introduce p{
+  padding: 5px 10px;
+  
+}
+.BookName{
+  font-size: 16px;
+  font-weight: bold;
+}
+.detail{
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+#change span {
+  font-family: "icomoon";
+  color: black;
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+}
+/* 影单模块 */
+#FilmList{
+  width: 180px;
+  height: 100px;
+  position:absolute;
+  top: 86px;
+  left: 30px;
+  text-align: right;
+}
+#FilmList h5::before{
+  content: "\e913";
+  font-family: "icomoon";
+  position:absolute;
+  top: -3px;
+  left: 84px;
+  font-size: 40px;
+  color: #4e4e4e;
+}
+#FilmList h5{
+  font-family: "icomoon";
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+  font-weight: 100;
+}
+#FilmGallery{
+  width: 955px;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  right: 0;
+}
+#outer{
+  width: 700px;
+  height: 250px;
+  margin: 30px auto 0;
+  box-shadow: 0 0 10px gray;
+  overflow: hidden;
+}
+.slide-content{
+  width: 2800px;
+}
+.slide-item{
+  width: 700px;
+  float: left;
+
+}
+.gallery-frame{
+  position: relative;
+}
+.gallery-detail{
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  top:0;
+  right:0;
+  background-image: url("image/bg1.jpg");
+}
+.detail-hd{
+  width: 200px;
+  height: 30px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+.detail-bd{
+  width: 350px;
+  height: 190px;
+  padding:30px 15px 10px;
+}
+.detail-bd p{
+  font-size: 12px;
+}
+/* 按钮控制电影滚动页 */
+#slide-control{
+  width: 160px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#pages{
+  float: left;
+}
+#slide-control-buttons{
+  font-family: "icomoon";
+  font-size: 18px;
+  float: right;
+}
+#slide-control-buttons a{
+  color: rgb(99, 97, 97);
+}
+
