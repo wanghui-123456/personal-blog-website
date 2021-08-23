@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animation.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        #outer{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            /* overflow:hidden; */
+            position: relative;
+        }
+        ul{
+            width: 1200px;
+            height: 300px;
+            background-color: pink;
+            position:absolute;
+            top: 0;     
+            left: 0;
+        }
+        li{
+            width: 300px;
+            float: left;
+        }
+        img{
+            width: 100%;
+        }
+
+        /* 控制按钮的布局 */
+        #controller{
+            width: 130px;
+            height: 30px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <ul>
+            <li>
+                <img src="image/view1.jpg" alt="">
+            </li>
+            <li>
+                <img src="image/view2.jpg" alt="">
+            </li>
+            <li>
+                <img src="image/bgp2.png" alt="">
+            </li>
+            <li>
+                <img src="image/view1.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <div id="controller">
+        <span id="pre">上一个</span>
+        <span id="next">下一个</span>
+    </div>
+    <script>
+        var pre=document.querySelector('#pre');
+        var next=document.querySelector('#next');
+        var ul=document.querySelector('ul');
+        var li=document.querySelector('li');
+        var longth=li.offsetWidth;
+        var num=0;
+        next.addEventListener('click',function(){
+            if(num==ul.children.length-1){
+                ul.style.left=0;
+                num=0;
+            }
+            num++; 
+            animate(ul,-num*longth);
+        })
+        pre.addEventListener('click',function(){
+            if(num==0){
+                num=ul.children.length-1;
+                ul.style.left=-num*longth+'px'; 
+            }
+            num--; 
+            animate(ul,-num*longth);
+        })
+        // 自动播放
+        var timer=setInterval(function(){
+            next.click();
+        },2000)
+        //鼠标经过ul，停止自动播放
+        ul.addEventListener('mouseenter',function(){
+            clearInterval(timer);
+            timer=null;
+        })
+        ul.addEventListener('mouseleave',function(){
+            clearInterval(timer);
+            timer=setInterval(function(){
+            next.click();
+            },2000)
+        })
+    </script>
+</body>
+</html>
