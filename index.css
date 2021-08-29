@@ -274,11 +274,11 @@ section #wrap-box {
   height: 250px;
   margin: 30px auto 0;
   box-shadow: 0 0 10px gray;
-  overflow: hidden;
+  overflow: hidden; 
   position: relative;
 }
 .slide-content{
-  width: 2800px;
+  width: 3500px;
   position:absolute;
   top: 0;     
   left: 0;
