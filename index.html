@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tujia girl's share space </title>
     <link rel="stylesheet" href="index.css">
+    <script src="animation.js"></script>
 </head>
 <body>
     <header>
@@ -86,7 +87,6 @@
                 </div>
             </a>
             <a href="#" id="change">
-                <!-- 添加更换的字体图标 -->
                 <span> 换一批</span>
             </a>
         </div>
@@ -102,8 +102,7 @@
             <div id="outer">
                 <ul class="slide-content">
                     <li class="slide-item">
-                        <div class="gallery-frame">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="image/dlr.jpg" alt="">
                             </a>
                             <div class="gallery-detail">
@@ -116,28 +115,24 @@
                                     <p>《德雷尔一家第一季》讲述了一战结束后，一位丧偶的母亲带着四个孩子，离开阴冷的英国城镇伯恩茅斯，来到希腊小岛科孚岛居住的经历。</p>
                                 </div>
                             </div>
-                        </div>
                     </li>
                     <li class="slide-item">
-                        <div class="gallery-frame">
-                            <a href="#">
-                                <img src="image/hywj.jpg" alt="">
-                            </a>
-                            <div class="gallery-detail">
-                                <div class="detail-hd">
-                                    <a href="#"> 
-                                        <h3>《何以为家》</h3>
-                                    </a>
-                                </div>
-                                <div class="detail-bd">
-                                    <p>《何以为家》讲述了一个12岁的黎巴嫩男孩扎因悲惨的生活经历，他控告自己的父母，原因是父母生下了他，却没有能够好好的抚养他。</p>
-                                </div>
+                        <a href="javascript:;">
+                            <img src="image/hywj.jpg" alt="">
+                        </a>
+                        <div class="gallery-detail">
+                            <div class="detail-hd">
+                                <a href="#"> 
+                                    <h3>《何以为家》</h3>
+                                </a>
+                            </div>
+                            <div class="detail-bd">
+                                <p>《何以为家》讲述了一个12岁的黎巴嫩男孩扎因悲惨的生活经历，他控告自己的父母，原因是父母生下了他，却没有能够好好的抚养他。</p>
                             </div>
                         </div>
                     </li>
-                    <li class="slide-item">
-                        <div class="gallery-frame">
-                            <a href="#">
+                    <li class="slide-item">       
+                            <a href="javascript:;">
                                 <img src="image/lps.jpg" alt="">
                             </a>
                             <div class="gallery-detail">
@@ -150,11 +145,9 @@
                                     <p>《绿皮书》讲述了保镖托尼被聘用为世界上优秀的古典钢琴家唐开车。钢琴家将从纽约开始举办巡回演奏，俩人之间一段跨越种族、阶级的友谊的故事。</p>
                                 </div>
                             </div>
-                        </div>
                     </li>
                     <li class="slide-item">
-                        <div class="gallery-frame">
-                            <a href="#">
+                            <a href="javascript:;">
                                 <img src="image/sklr.jpg" alt="">
                             </a>
                             <div class="gallery-detail">
@@ -167,7 +160,6 @@
                                     <p>《时空恋人》讲述了一个拥有穿越时间能力的男人的故事。Tim21岁了，他的老爸告诉他，他们家族的男人都有时光旅行的超能力，可以回到过去。于是Tim将信就疑地试了一下，回到了夏天，在那里他试图改变和暗恋对象的关系，却发现怎么穿越时空都不能让不爱你的人爱上你。</p>
                                 </div>
                             </div>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -178,17 +170,55 @@
                       /  
                     <span id="total-page">4</span>
                 </div>
-                 <!-- 添加左右字体图标，表示上下页 -->
                 <div id="slide-control-buttons">
-                    <a href="#" id="pre-page">
+                    <a href="javascript:;" id="pre-page">
                         <span ></span>
                     </a>
-                    <a href="#"  id="next-page">
+                    <a href="javascript:;"  id="next-page">
                         <span></span>  
                     </a>                 
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        var pre=document.querySelector('#pre-page');
+        var next=document.querySelector('#next-page');
+        var ul=document.querySelector('.slide-content');
+        var li=document.querySelector('.slide-item');
+        var longth=li.offsetWidth;
+        var num=0;
+        next.addEventListener('click',function(){
+            if(num==ul.children.length-1){
+                ul.style.left=0;
+                num=0;
+            }
+            num++; 
+            animate(ul,-num*longth);
+        })
+        pre.addEventListener('click',function(){
+            if(num==0){
+                num=ul.children.length-1;
+                ul.style.left=-num*longth+'px'; 
+            }
+            num--; 
+            animate(ul,-num*longth);
+        })
+        // 自动播放
+        var timer=setInterval(function(){
+            next.click();
+        },3000)
+        //鼠标经过ul，停止自动播放
+        ul.addEventListener('mouseenter',function(){
+            clearInterval(timer);
+            timer=null;
+        })
+        ul.addEventListener('mouseleave',function(){
+            clearInterval(timer);
+            timer=setInterval(function(){
+            next.click();
+            },3000)
+        })
+    </script>
 </body>
 </html>

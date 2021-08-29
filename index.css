@@ -275,25 +275,23 @@ section #wrap-box {
   margin: 30px auto 0;
   box-shadow: 0 0 10px gray;
   overflow: hidden;
+  position: relative;
 }
 .slide-content{
   width: 2800px;
+  position:absolute;
+  top: 0;     
+  left: 0;
 }
 .slide-item{
   width: 700px;
+  background-image: url("image/bg1.jpg");
   float: left;
-
-}
-.gallery-frame{
-  position: relative;
 }
 .gallery-detail{
   width: 350px;
   height: 250px;
-  position: absolute;
-  top:0;
-  right:0;
-  background-image: url("image/bg1.jpg");
+  float: right;
 }
 .detail-hd{
   width: 200px;
