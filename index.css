@@ -131,9 +131,11 @@ section #wrap-box {
   cursor: pointer;
 }
 /* 书单模块 */
-#BookListArea,#FilmArea {
-  height: 450px;
+#BookListArea,#FilmArea,#AlbumArea{
   position: relative;
+}
+#BookListArea{
+  height: 450px;
 }
 #BookList{
   width: 180px;
@@ -144,10 +146,10 @@ section #wrap-box {
   text-align: right;
 }
 #BookList h5::before{
-  content: "\e912";
+  content: "\e904";
   font-family: "icomoon";
   position:absolute;
-  top: 3px;
+  top: -6px;
   left: 84px;
   font-size: 40px;
   color: #4e4e4e;
@@ -216,7 +218,7 @@ section #wrap-box {
   font-size: 16px;
 }
 .B-introduce p{
-  padding: 5px 10px;
+  padding: 3px 15px;
   
 }
 .BookName{
@@ -225,11 +227,10 @@ section #wrap-box {
 }
 .detail{
   font-size: 12px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
   overflow: hidden;
-  text-overflow:ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 #change span {
   font-family: "icomoon";
@@ -239,6 +240,9 @@ section #wrap-box {
   left: 50%;
 }
 /* 影单模块 */
+#FilmArea{
+  height: 380px;
+}
 #FilmList{
   width: 180px;
   height: 100px;
@@ -248,10 +252,10 @@ section #wrap-box {
   text-align: right;
 }
 #FilmList h5::before{
-  content: "\e913";
+  content: "\e900";
   font-family: "icomoon";
   position:absolute;
-  top: -3px;
+  top: -8px;
   left: 84px;
   font-size: 40px;
   color: #4e4e4e;
@@ -264,10 +268,10 @@ section #wrap-box {
 }
 #FilmGallery{
   width: 955px;
-  height: 100%;
+  height: 85%;
   position:absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  left: 180px;
 }
 #outer{
   width: 700px;
@@ -304,8 +308,12 @@ section #wrap-box {
   height: 190px;
   padding:30px 15px 10px;
 }
-.detail-bd p{
+.detail-bd > p{
   font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 /* 按钮控制电影滚动页 */
 #slide-control{
@@ -325,4 +333,66 @@ section #wrap-box {
 #slide-control-buttons a{
   color: rgb(99, 97, 97);
 }
+/* 相册模块 */
+#AlbumArea{
+  height: 400px;
+}
+#Album{
+  width: 180px;
+  height: 100px;
+  position:absolute;
+  top: 86px;
+  left: 30px;
+  text-align: right;
 
+}
+#Album h5::before{
+  content: "\e907";
+  font-family: "icomoon";
+  position:absolute;
+  top: -8px;
+  left: 84px;
+  font-size: 40px;
+  color: #4e4e4e;
+}
+#Album h5{
+  font-family: "icomoon";
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+  font-weight: 100;
+}
+#AlbumGallery{
+  width: 955px;
+  height: 90%;
+  padding-left: 40px;
+  position:absolute;
+  top: 0;
+  right: 0;
+}
+#AlbumGallery>.cards{
+  width: 210px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px gray;
+  float: left;
+  margin: 0 5px;
+  position: relative;
+}
+#AlbumGallery>.cards>a{
+  text-align: center;
+}
+#AlbumGallery>.cards:hover{
+  transform: scale(1.1,1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#AlbumGallery>.cards>.illustration{
+  width: 100%;
+  height: 25px;
+  margin: 5px 0;
+  position: absolute;
+  bottom: 0;
+  line-height: 25px;
+  text-align: center;
+  font-size: 16px;
+}

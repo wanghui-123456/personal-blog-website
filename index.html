@@ -7,6 +7,7 @@
     <title>Tujia girl's share space </title>
     <link rel="stylesheet" href="index.css">
     <script src="animation.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
     <nav>
         <ul>
             <li><a href="#">首页</a></li>
-            <li><a href="#">日志</a></li>
+            <li><a href="#">Vlog</a></li>
             <li><a href="#">相册</a></li>
             <li><a href="#">关于我</a></li>
             <li><a href="#">分享</a></li>
@@ -40,7 +41,7 @@
     <section class="w" id="BookListArea">
         <div id="BookList">
             <h5>书单<br><br>BOOK LIST<br><br>
-                <a href="#"> More...</a>
+                <a href="#"> More...</a>
             </h5>
         </div>
         <div id="BookList-cards">
@@ -95,7 +96,7 @@
     <section  class="w" id="FilmArea">
         <div id="FilmList">
             <h5>影单<br><br>FILM LIST<br><br>
-                <a href="#"> More...</a>
+                <a href="#">More...</a>
             </h5>
         </div>
         <div id="FilmGallery">
@@ -168,7 +169,7 @@
                         <div class="gallery-detail">
                             <div class="detail-hd">
                                 <a href="#"> 
-                                    <h3>《5德雷尔一家》</h3>
+                                    <h3>《德雷尔一家》</h3>
                                 </a>
                             </div>
                             <div class="detail-bd">
@@ -196,57 +197,43 @@
             </div>
         </div>
     </section>
-    <script>
-        var pre=document.querySelector('#pre-page');
-        var next=document.querySelector('#next-page');
-        var ul=document.querySelector('.slide-content');
-        var li=document.querySelector('.slide-item');
-        
-        var longth=li.offsetWidth;
-        var num=0;
-        next.addEventListener('click',function(){ 
-            var currentPage = document.getElementById("current-page").innerHTML;
-            currentPage++;
-            if(currentPage==5){
-                currentPage=1;
-            }
-            document.getElementById("current-page").innerHTML = currentPage;
-            if(num==ul.children.length-1){
-                ul.style.left=0;
-                num=0;
-            }
-            num++; 
-            animate(ul,-num*longth);
-        })
-        pre.addEventListener('click',function(){
-            var currentPage = document.getElementById("current-page").innerHTML;
-            currentPage--;
-            if(currentPage==0){
-                currentPage=4;
-            }
-            document.getElementById("current-page").innerHTML = currentPage;
-            if(num==0){
-                num=ul.children.length-1;
-                ul.style.left=-num*longth+'px'; 
-            }
-            num--; 
-            animate(ul,-num*longth);
-        })
-        // 自动播放
-        var timer=setInterval(function(){
-            next.click();
-        },3000)
-        //鼠标经过ul，停止自动播放
-        ul.addEventListener('mouseenter',function(){
-            clearInterval(timer);
-            timer=null;
-        })
-        ul.addEventListener('mouseleave',function(){
-            clearInterval(timer);
-            timer=setInterval(function(){
-            next.click();
-            },3000)
-        })
-    </script>
+    <!-- 相册模块 -->
+    <section class="w" id="AlbumArea">
+        <div id="Album">
+            <h5>相册<br><br>ALBUM<br><br>
+                <a href="#"> More...</a>
+            </h5>
+        </div>
+        <div id="AlbumGallery">
+                <div class="cards">
+                    <a href="javascript:;">
+                        <img src="image/view03.jpg" alt="" style="border-radius:15px 15px 0 0">
+                        <div class="illustration">北国风光</div>
+                    </a>
+                </div>
+            <div class="cards">
+               <a href="javascript:;">
+                <img src="image/view02.jpg" alt="" style="border-radius:15px 15px 0 0">
+                <div class="illustration">游玩</div>
+               </a>
+            </div>
+            <div class="cards">
+                <a href="javascript:;">
+                    <img src="image/view01.jpg" alt="" style="border-radius:15px 15px 0 0">
+                <div class="illustration">可爱的人儿</div>
+                </a>
+            </div>
+            <div class="cards">
+                <a href="javascript:;">
+                    <img src="image/view04.jpg" alt="" style="border-radius:15px 15px 0 0">
+                <div class="illustration">好吃的</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 关于我模块 -->
+    <section id="AboutMe">
+
+    </section>
 </body>
 </html>
